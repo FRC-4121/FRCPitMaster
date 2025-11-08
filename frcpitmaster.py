@@ -1,6 +1,6 @@
 ##################################################################
 #                                                                #
-#                        Team 4121 Pit Master                    #
+#                     Team 4121 Pit Master                       #
 #                                                                #
 #  This GUI application is designed to be used in an FRC team's  #
 #  pit during competitions.  The main window of the application  #
@@ -15,7 +15,7 @@
 #  related data is read from The Blue Alliance servers using     #
 #  the Read API (v3) provide by The Blue Alliance.               #
 #                                                                #
-#  Author:  Timothy A. Fuller                      v             #
+#  Author:  Timothy A. Fuller                                    #
 #  Date:  9/28/2025                                              #
 #                                                                #
 #  Version:  1.0.0                                               #
@@ -55,8 +55,24 @@ class MainWindow(qtw.QMainWindow):
         self.mainarea = qtw.QWidget()
         self.setCentralWidget(self.mainarea)
 
+        # Create the main menu
+        self.create_main_menu()
+
+        # Create main layout
+        self.main_grid = qtw.QGridLayout()
+        self.mainarea.setLayout(self.main_grid)
+
+
         # Show the main window
         self.show()
+    
+    # Create the main menu
+    def create_main_menu(self):
+
+        mainmenu = self.menuBar()
+
+        #Add settings menu
+        self.settings_menu = mainmenu.addMenu('Settings')
 
 
 # Define main method
